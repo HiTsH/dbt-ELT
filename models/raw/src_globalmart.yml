@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: globalmart
+    database: raw
+    schema: globalmart
+    tables:
+      - name: customer
+      - name: orders
+      - name: product
+
+# Data freshness test, count refers to the number of period instance either it's hour/day/month
+        # freshness: 
+          # warn_after:
+            # count: 1
+            # period: day
+          # error_after:
+            # count: 2
+            # period: day
+
+
+      
