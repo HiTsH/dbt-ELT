@@ -1,4 +1,6 @@
 select
+-- from dbt_utils package // generate_surrogate_key()
+{{ dbt_utils.generate_surrogate_key(['o.orderid', 'c.customerid','p.productid']) }} as SK_orders,
 -- from orders
 o.orderid,
 o.orderdate,
