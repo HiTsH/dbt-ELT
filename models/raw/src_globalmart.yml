@@ -7,6 +7,12 @@ sources:
     tables:
       - name: customer
       - name: orders
+      # run test on the source data
+        columns:
+          - name: orderid
+            tests:
+              - unique
+              - not_null
       - name: product
 
 # Data freshness test, count refers to the number of period instance either it's hour/day/month
