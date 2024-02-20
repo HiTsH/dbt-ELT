@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: globalmart
+    description: a clone of snowflake database
+    database: raw
+    schema: globalmart
+    tables:
+      - name: customer
+        description: raw customer table
+      - name: orders
+        description: raw orders table
+      # run test on the source data
+        columns:
+          - name: orderid
+            description: primary key for orders
+            tests:
+              - unique
+              - not_null
+      - name: product
+        description: raw products table
+# Data freshness test, count refers to the number of period instance either it's hour/day/month
+        # freshness: 
+          # warn_after:
+            # count: 1
+            # period: day
+          # error_after:
+            # count: 2
+            # period: day
+
+
+      
